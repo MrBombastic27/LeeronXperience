@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeeronXperience - IT Solutions & Event Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FFD700;
+            --secondary: #4A00E0;
+            --accent: #FF6B6B;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .bg-vibrant {
+            background: linear-gradient(135deg, #FFD700 0%, #FFFFFF 50%, #FF6B6B 100%);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover, .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4c382d8d-af14-48e1-90ce-a2b8dfdc040c.png" alt="LeeronXperience logo with stylized LX initials in gold gradient" class="h-12">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#about" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#services" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">IT Services</a>
+                        <a href="#events" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Events</a>
+                        <a href="#portfolio" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Portfolio</a>
+                        <a href="#contact" class="nav-link text-gray-900 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="btn-primary px-6 py-2 rounded-full font-bold text-gray-900">Get Started</button>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-900">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">About</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">IT Services</a>
+                <a href="#events" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Events</a>
+                <a href="#portfolio" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Portfolio</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900">Contact</a>
+                <button class="btn-primary w-full mt-2 px-6 py-2 rounded-full font-bold text-gray-900">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-vibrant py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 animated">
+                    <h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Elevate Your <span class="text-white">Digital Presence</span> & Create <span class="text-white">Unforgettable Events</span>
+                    </h1>
+                    <p class="text-lg text-gray-800 mb-8">
+                        At LeeronXperience, we combine cutting-edge IT solutions with spectacular event management to give your brand the perfect digital and physical presence.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="btn-primary px-8 py-3 rounded-full font-bold text-gray-900">IT Solutions</button>
+                        <button class="bg-white px-8 py-3 rounded-full font-bold text-gray-900 border-2 border-gray-900 hover:bg-gray-100 transition-colors">Event Planning</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 animated" style="animation-delay: 0.3s;">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3283ca48-758d-4b6f-9b5f-4b6c21ecffe5.png" alt="Team collaborating in modern office with laptops and digital screens showing analytics dashboards next to an elegant event setup with floral arrangements" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Who We Are</h2>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-10">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/58fa2667-67e2-49e9-8ddd-337a7dbc63c8.png" alt="Diverse team of IT professionals and event planners working together in a bright, collaborative workspace with plants and modern furniture" class="rounded-2xl shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Bridging Technology & Experiences</h3>
+                    <p class="text-gray-700 mb-6">
+                        Founded in 2010, LeeronXperience has grown from a small IT consultancy to a full-service digital solutions and event management powerhouse. We've helped over 500 clients transform their digital presence while creating memorable events that elevate their brands.
+                    </p>
+                    <p class="text-gray-700 mb-8">
+                        Our unique combination of technical expertise and creative event planning allows us to offer comprehensive solutions that few competitors can match. Whether you need a new website, mobile app, or an unforgettable corporate event, we've got you covered.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <div class="text-yellow-500 mb-2">
+                                <i class="fas fa-laptop-code text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-1">IT Services</h4>
+                            <p class="text-sm text-gray-700">Custom solutions for your digital needs</p>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <div class="text-yellow-500 mb-2">
+                                <i class="fas fa-calendar-alt text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold text-gray-900 mb-1">Event Management</h4>
+                            <p class="text-sm text-gray-700">Unforgettable experiences for your guests</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our IT Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Custom technology solutions to power your business growth</p>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-2xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Web Development</h3>
+                    <p class="text-gray-700 mb-6">Custom websites built for performance, security, and conversion with the latest technologies.</p>
+                    <button class="text-yellow-500 font-bold flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Mobile App Development</h3>
+                    <p class="text-gray-700 mb-6">Beautiful, performant mobile applications for iOS and Android platforms.</p>
+                    <button class="text-yellow-500 font-bold flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-2xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Cloud Solutions</h3>
+                    <p class="text-gray-700 mb-6">Scalable cloud infrastructure and migration services for enterprise applications.</p>
+                    <button class="text-yellow-500 font-bold flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Cyber Security</h3>
+                    <p class="text-gray-700 mb-6">Comprehensive security assessments and solutions to protect your digital assets.</p>
+                    <button class="text-yellow-500 font-bold flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Digital Marketing</h3>
+                    <p class="text-gray-700 mb-6">Data-driven marketing strategies to grow your online presence and customer base.</p>
+                    <button class="text-yellow-500 font-bold flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg transition-all duration-300">
+                    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-2xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">IT Consulting</h3>
+                    <p class="text-gray-700 mb-6">Strategic guidance to align your technology with business objectives.</p>
+                    <button class="text-yellow-500 font-bold flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Management Section -->
+    <section id="events" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Event Management</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Creating memorable experiences that tell your brand's story</p>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Event Card 1 -->
+                <div class="event-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bd155d8a-ed4f-480e-9e56-65ebe8c121cc.png" alt="Elegant corporate gala event with sophisticated decorations and guests networking" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Corporate Events</h3>
+                        <p class="text-gray-700 mb-4">Professional gatherings that impress clients and motivate teams.</p>
+                        <button class="btn-primary px-6 py-2 rounded-full font-bold text-gray-900 text-sm">Plan Your Event</button>
+                    </div>
+                </div>
+                
+                <!-- Event Card 2 -->
+                <div class="event-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/60a92636-eb95-436b-b262-523aa8315661.png" alt="Colorful product launch event with stage, digital screens showing the product, and excited attendees" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Product Launches</h3>
+                        <p class="text-gray-700 mb-4">Buzz-worthy introductions that make an impact.</p>
+                        <button class="btn-primary px-6 py-2 rounded-full font-bold text-gray-900 text-sm">Plan Your Event</button>
+                    </div>
+                </div>
+                
+                <!-- Event Card 3 -->
+                <div class="event-card bg-gray-50 rounded-2xl overflow-hidden shadow-lg transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f33db0b1-647b-46a2-afd6-50e7e922da0b.png" alt="Conference hall full of attendees with large digital screens displaying presentations and stage lighting" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Conferences</h3>
+                        <p class="text-gray-700 mb-4">Immersive learning and networking experiences.</p>
+                        <button class="btn-primary px-6 py-2 rounded-full font-bold text-gray-900 text-sm">Plan Your Event</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <button class="btn-primary px-8 py-3 rounded-full font-bold text-gray-900 mx-auto">View All Event Services</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Some of our recent projects and events</p>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="portfolio-item group relative overflow-hidden rounded-2xl">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb89e85c-bde4-40e4-9e28-f7158700b522.png" alt="Brand new corporate website with modern UI design shown on multiple devices" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">TechCorp Website Redesign</h3>
+                            <p class="text-white mb-4">Modern responsive website with integrated CMS</p>
+                            <button class="btn-primary px-6 py-2 rounded-full font-bold text-gray-900 text-sm">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item group relative overflow-hidden rounded-2xl">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8a2ba16c-87a9-4fa8-9d14-af9813b6abc7.png" alt="Mobile app screens showing intuitive user interface with dashboard analytics" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">FinancePro Mobile App</h3>
+                            <p class="text-white mb-4">iOS and Android financial management application</p>
+                            <button class="btn-primary px-6 py-2 rounded-full font-bold text-gray-900 text-sm">View Project</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item group relative overflow-hidden rounded-2xl">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/519354b1-2be8-460b-a271-166fc14fb240.png" alt="Large corporate conference with international speakers on stage and full auditorium" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-center p-6">
+                            <h3 class="text-white text-xl font-bold mb-2">Global Tech Summit 2023</h3>
+                            <p class="text-white mb-4">3-day international technology conference</p>
+                            <button class="btn-primary px-6 py-2 rounded-full font-bold text-gray-900 text-sm">View Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <button class="bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-colors mx-auto">View Full Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-yellow-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <div class="w-20 h-1 bg-yellow-400 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ecd5c79a-0bb9-4490-b3f1-b114a3a96b7f.png" alt="Portrait of Sarah Johnson, Marketing Director at TechSolutions Inc" class="w-12 h-12 rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-sm text-yellow-500">Marketing Director, TechSolutions Inc</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "LeeronXperience transformed our outdated website into a modern, high-performing digital asset that has significantly improved our lead generation. Their team was professional knowledgable from start to finish."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4fa8bd3c-ff6d-4704-beb8-f953085fac0a.png" alt="Portrait of Michael Chen, CEO of GreenStart Ventures" class="w-12 h-12 rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Michael Chen</h4>
+                            <p class="text-sm text-yellow-500">CEO, GreenStart Ventures</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "The event LeeronXperience organized for our product launch was flawless. Their attention to detail and creative approach made our product stand out and generated tremendous media coverage."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dec0a485-78ba-480c-823a-0753862ef201.png" alt="Portrait of Anita Rodriguez, Director of Operations at HealthPlus" class="w-12 h-12 rounded-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Anita Rodriguez</h4>
+                            <p class="text-sm text-yellow-500">Director of Operations, HealthPlus</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "Their cloud migration services saved us thousands in infrastructure costs while improving our system reliability. LeeronXperience is now our go-to partner for all IT needs."
+                    </p>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Get In Touch</h2>
+                    <p class="text-gray-700 mb-8 max-w-md">
+                        Ready to discuss your project or event? Fill out the form and we'll get back to you within 24 hours. You can also reach us directly through phone or email.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-50 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Office</h4>
+                                <p class="text-gray-700">123 Business Ave, Suite 500<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-yellow-50 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-phone-alt text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Phone</h4>
+                                <p class="text-gray-700">(415) 555-1234</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-yellow-50 rounded-full w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope text-yellow-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900">Email</h4>
+                                <p class="text-gray-700">hello@leeronxperience.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <form class="bg-gray-50 p-8 rounded-2xl">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-900 font-medium mb-2">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Your name">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-900 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Your email">
+                        </div>
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-900 font-medium mb-2">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Your phone number">
+                        </div>
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-900 font-medium mb-2">Interested In</label>
+                            <select id="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                                <option value="">Select a service</option>
+                                <option value="web-dev">Web Development</option>
+                                <option value="mobile-dev">Mobile App Development</option>
+                                <option value="cloud">Cloud Solutions</option>
+                                <option value="security">Cyber Security</option>
+                                <option value="corporate-events">Corporate Events</option>
+                                <option value="conferences">Conferences</option>
+                                <option value="product-launches">Product Launches</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-900 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full py-3 rounded-full font-bold text-gray-900">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0cced0b6-4eb1-426d-b2c5-8f79daf09866.png" alt="LeeronXperience logo in white with stylized LX initials" class="h-10 mb-4">
+                    <p class="text-gray-400 mb-4">
+                        Bridging technology and experiences to help businesses thrive in the digital age.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cyber Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Events</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Corporate Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Product Launches</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Conferences</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Trade Shows</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between">
+                <p class="text-gray-500 mb-4 md:mb-0">© 2023 LeeronXperience. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile menu script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            if (isOpen) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        
+        // Smooth scrolling for all links with hash
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form submission handler
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real application, you would send the form data to your server here
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
+
